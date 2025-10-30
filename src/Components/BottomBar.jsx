@@ -2,7 +2,7 @@ import React from "react";
 import "./BottomBar.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import TelegramIcon from "mui/icons-material/Telegram";
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 function BottomBar() {
   return (
