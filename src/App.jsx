@@ -1,6 +1,6 @@
 import React from "react";
 import {Routes,Route} from 'react-router-dom';
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/NavBar";
 import Events from "./Pages/Events";
 import Videos from "./Pages/Videos";
 import BottomBar from "./Components/BottomBar";
