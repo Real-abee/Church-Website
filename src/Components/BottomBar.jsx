@@ -1,8 +1,8 @@
 import React from "react";
 import "./BottomBar.css";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import TelegramIcon from "@material-ui/icons/Telegram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import TelegramIcon from "mui/icons-material/Telegram";
 
 function BottomBar() {
   return (
