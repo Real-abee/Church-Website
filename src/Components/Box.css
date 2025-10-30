@@ -1,42 +1,69 @@
 .box {
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid lightblue;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    max-width: 400px;
-    height: 45vh;
-    margin: 20px;
-}
-
-.box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column; /* Stack image and content vertically */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures content stays within rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Ensures box takes full height of its li.slide parent */
+  box-sizing: border-box; /* Include padding/border in height/width */
 }
 
 .box-image {
-
-    width: 400px;
-    height: 220px;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+  width: 100%; /* Image takes full width of the box */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below image */
+  object-fit: cover; /* Cover the area, potentially cropping */
+  flex-shrink: 0; /* Prevent image from shrinking if content is too long */
 }
 
-/* .box-content {
-    padding: 15px;
-} */
+.box-content {
+  padding: 15px;
+  flex-grow: 1; /* Allow content area to grow and take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* If you want title/description spaced */
+}
 
 .box-title {
-    margin: 10;
-    font-size: 1.3em;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    }
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
 
 .box-description {
-    margin-top: 4px;
-    color: #777;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  flex-grow: 1; /* Allow description to take up available space */
+}
+
+/* Media queries for smaller screens - these will override default styles */
+@media (max-width: 768px) {
+  .box-image {
+    /* Adjust height if you want different image proportions on mobile */
+    /* e.g., height: 200px; */
+  }
+
+  .box-content {
+    padding: 10px; /* Reduce padding on smaller screens */
+  }
+
+  .box-title {
+    font-size: 1.1rem; /* Adjust title size */
+  }
+
+  .box-description {
+    font-size: 0.85rem; /* Adjust description size */
+  }
+}
+
+@media (max-width: 480px) {
+  .box-title {
+    font-size: 1rem;
+  }
+  .box-description {
+    font-size: 0.8rem;
+  }
 }

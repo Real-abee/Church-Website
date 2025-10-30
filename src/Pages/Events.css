@@ -1,10 +1,53 @@
-/* .event_cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-    width: 95%;
-    margin: 0 auto;
-    
-}  */
+.header {
+  font-family: Arial, sans-serif;
+}
+
+.event_cards {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-root {
+  width: 100%;
+}
+
+.carousel .slide {
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.carousel .slide > div {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 1024px) {
+  .event_cards {
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .event_cards {
+    padding: 20px 10px;
+  }
+
+  .carousel .slide {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event_cards {
+    padding: 15px 5px;
+  }
+
+  .carousel .slide {
+    padding: 5px;
+  }
+}

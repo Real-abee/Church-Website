@@ -1,27 +1,61 @@
 .hero {
-    position: relative;  
-   
+  position: relative; /* Establish positioning context for absolute children */
+  width: 100%;
+  min-height: 60vh; /* A good responsive starting point, or adjust as needed */
+  display: flex; /* Use flex to help center content in the overlay */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  overflow: hidden; /* Ensure image and overlay stay within bounds */
 }
-.image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    position: relative;
+
+.hero .image {
+  position: absolute; /* Position image to cover the entire hero area */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the container, cropping if necessary */
+  z-index: 1; /* Place image behind the overlay */
 }
+
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: absolute; /* Position overlay to cover the entire hero area */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex; /* Use flex to center the title */
+  align-items: center; /* Vertically center the title */
+  justify-content: center; /* Horizontally center the title */
+  z-index: 2; /* Place overlay above the image */
 }
+
 .hero_title {
-    color: white;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 0;
+  color: white;
+  font-size: clamp(2rem, 8vw + 1rem, 5rem); /* Fluid font size for responsiveness */
+  text-align: center;
+  margin: 0; /* Remove default margin */
+  padding: 0 20px; /* Add some padding to prevent text from touching edges */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Enhance readability */
+  word-wrap: break-word; /* Ensure long titles wrap */
+  max-width: 90%; /* Prevent title from taking full width on very large screens */
+}
+
+/* Media query for smaller screens, if more specific adjustments are needed */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 40vh; /* Adjust height for mobile if necessary */
+  }
+
+  .hero_title {
+    font-size: clamp(1.8rem, 10vw, 3rem); /* More aggressive scaling for small screens */
+    padding: 0 15px;
+  }
+}
+/* If you want to fine-tune for even smaller screens */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 35vh; /* Further adjust height for very small screens */
+  }
 }
