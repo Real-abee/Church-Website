@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import "./NavBar.css";
 import logo from "../Assets/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
